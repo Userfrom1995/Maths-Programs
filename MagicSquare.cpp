@@ -7,31 +7,24 @@ vector<vector<int>> generateMagicSquare(int n) {
     vector<vector<int>> magicSquare(n, vector<int>(n, 0));
 
     // Initialize position for 1
-    int i = n / 2;
-    int j = n - 1;
+    int i = 0;
+    int j = n / 2;
 
     // One by one put all values in magic square
-    for (int num = 1; num <= n * n;) {
-        if (i == -1 && j == n) {
-            j = n - 2;
-            i = 0;
-        } else {
-            // Wrap around row
-            if (j == n)
-                j = 0;
-            // Wrap around column
-            if (i < 0)
-                i = n - 1;
-        }
-        if (magicSquare[i][j] != 0) {
-            j -= 2;
-            i++;
-            continue;
-        } else
-            magicSquare[i][j] = num++;
+    for (int num = 1; num <= n * n; ++num) {
+        magicSquare[i][j] = num;
 
-        j++;
-        i--;
+        // Calculate next position
+        int nexti = (i - 1 + n) % n;
+        int nextj = (j + 1) % n;
+
+        // If the next position is already filled or out of bounds, move down
+        if (magicSquare[nexti][nextj] != 0) {
+            i = (i + 1) % n;
+        } else {
+            i = nexti;
+            j = nextj;
+        }
     }
 
     return magicSquare;
@@ -51,8 +44,8 @@ int main() {
     cout << "Enter the size of the magic square (N x N): ";
     cin >> n;
 
-    if (n < 3) {
-        cout << "Magic square is not possible for less than 3x3 size." << endl;
+    if (n % 2 == 0 && n < 4) {
+        cout << "Magic square is not possible for even numbers less than 4x4 size." << endl;
         return 1;
     }
 
