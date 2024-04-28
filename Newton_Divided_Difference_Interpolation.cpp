@@ -30,9 +30,7 @@ void dividedDiffTable(double x[], double y[][10], int n)
 
         for (int j = 0; j < n - i; j++) {
 
-            y[j][i] = (y[j][i - 1] - y[j + 1]
-
-                         [i - 1]) / (x[j] - x[i + j]);
+            y[j][i] = (y[j][i - 1] - y[j + 1][i - 1]) / (x[j] - x[i + j]);
 
         }
 
