@@ -13,7 +13,7 @@ double derivFunc(double x) {
 
 void newtonRaphson(double x, double tolerence) {
     double h = func(x) / derivFunc(x);
-    while (abs(h) >= tolerence) {
+    while (abs(h) > tolerence) {
         h = func(x) / derivFunc(x);
         x = x - h;
     }

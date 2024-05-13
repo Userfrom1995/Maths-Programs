@@ -43,7 +43,7 @@ int main()
 {
 	float lower_limit = 4; // Lower limit
 	float upper_limit = 5.2; // Upper limit
-	int n = 6; // Number of interval
+	int n = 4; // Number of interval
 	cout << simpsons_(lower_limit, upper_limit, n);
 	return 0;
 }

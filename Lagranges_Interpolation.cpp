@@ -8,8 +8,9 @@ double lagrangeInterpolation(double x[], double y[], int n, double xp) {
     for (int i=0; i<n; i++) {
         double term = y[i];
         for (int j=0;j<n;j++) {
-            if (j!=i)
+            if (j!=i){
                 term = term*(xp - x[j])/(x[i] - x[j]);
+            }
         }
 
         // Add current term to result
@@ -40,7 +41,7 @@ int main() {
     cout << "Enter the value of x for which you want to find y: " << endl;
     double xp ;
     cin >> xp;
-
+ 
     cout << "The value of f(" << xp << ") is " << lagrangeInterpolation(x, y, n, xp) << endl;
     return 0;
 }

@@ -21,7 +21,7 @@ int main() {
 
     double sum = 0; // Initialize sum to 0
 
-    for(int i = 0 ; i <= interval_limit - 6 ; i = i + 6){
+    for(int i = 0 ; i < interval_limit/6 ; i = i + 6){
         sum = sum +k*(fx[i] + 5*fx[i+1] + fx[i+2] + 6*fx[i+3] + fx[i+4] + 5*fx[i+5] + fx[i+6]);
     
     }

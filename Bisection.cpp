@@ -21,7 +21,7 @@ double bisectionMethod( double a, double b, double tolerance) {
         c = (a + b) / 2;
 
         // Check if middle point is root
-        if (f(c) == 0.0 || std::abs(f(c)) < tolerance)
+        if (f(c) == 0.0 || abs(f(c)) < tolerance)
             break;
 
         // Decide the side to repeat the steps

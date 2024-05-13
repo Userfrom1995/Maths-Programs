@@ -10,7 +10,7 @@ vector<double> gaussSeidel(const vector<vector<double>>& A, int maxIterations, d
     for (int iter = 0; iter < maxIterations; ++iter) {
         x_old = x;
         for (int i = 0; i < n; ++i) {
-            double sum = b[i];
+            double sum = 0.0;
             for (int j = 0; j < n+1; ++j) {
                 if (j != i)
                  sum -= A[i][j] * x[j];
