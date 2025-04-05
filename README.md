@@ -1,2 +1,2 @@
 # Maths-Programs
-4th Semester Program's 
+A collection of simple mathematical programs implemented in C for basic numerical operations and algorithms
